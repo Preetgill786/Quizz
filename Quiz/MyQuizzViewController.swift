@@ -16,13 +16,13 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var quizList  = [QuizItem]()
     
     @IBOutlet weak var tableQuizOptions: UITableView!
-     
+    
     @IBOutlet weak var nextButton: UIButton!
-   
+    
     @IBOutlet weak var quizLabel: UILabel!
     
     @IBAction func nextPress(_ sender: Any) {
-     
+        
         var isAllFalse = false
         
         for i in 0 ..< selectedQuizList[quizNum].quizOptArrCLICK.count{
@@ -43,56 +43,56 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         
         
-
-
-              
-                if(self.quizNum < 5)
-                {
+        
+        
+        
+        if(self.quizNum < 5)
+        {
+            
+            self.quizNum += 1
+            
+            let num = self.quizNum + 1
+            self.queCountLbl.text = "\(num)/5"
+            
+            self.tableQuizOptions.reloadData()
+            self.quizLabel.text = self.selectedQuizList[self.quizNum].quiz
+            
+        }
+        
+        
+        if(self.quizNum == 4)
+        {
+            
+            self.nextButton.setTitle("FINISH", for: UIControl.State.normal)
+            return
+        }
+        
+        if( self.quizNum == 5 )
+        {
+            var resCOUNT = 0
+            for i in 0 ..< 5 {
+                if(self.selectedQuizList[i].quizANS == self.selectedQuizList[i].myANS){
+                    resCOUNT += 1
+                }
+            }
+            
+            
+            
+            
+            print("score = \(resCOUNT)")
+            
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
+                
+                vc.result = resCOUNT
+                
+                if let navi = self.navigationController {
                     
-                    self.quizNum += 1
-                    
-                    let num = self.quizNum + 1
-                    self.queCountLbl.text = "\(num)/5"
-                    
-                    self.tableQuizOptions.reloadData()
-                    self.quizLabel.text = self.selectedQuizList[self.quizNum].quiz
+                    navi.pushViewController(vc, animated: true)
                     
                 }
-                
-                
-                if(self.quizNum == 4)
-                {
-                                                            
-                    self.nextButton.setTitle("FINISH", for: UIControl.State.normal)
-                    return
-                }
-                
-                if( self.quizNum == 5 )
-                {
-                    var resCOUNT = 0
-                    for i in 0 ..< 5 {
-                        if(self.selectedQuizList[i].quizANS == self.selectedQuizList[i].myANS){
-                            resCOUNT += 1
-                        }
-                    }
-                    
-                    
-             
-                    
-                    print("score = \(resCOUNT)")
-                    
-                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
-                       
-                        vc.result = resCOUNT
-                        
-                        if let navi = self.navigationController {
-                            
-                            navi.pushViewController(vc, animated: true)
-                            
-                        }
-                    }
-                    
-                }
+            }
+            
+        }
         
         
         
@@ -106,7 +106,7 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         
         
-
+        
         
         
         super.init(coder : aDecoder)
@@ -135,7 +135,7 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
         }
         
-          
+        
     }
     
     func loadChecklistItems() {
@@ -212,7 +212,7 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedQuizList[quizNum].quizOptArrCLICK[indexPath.row] = false
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+      tableView.cellForRow(at: indexPath)?.accessoryType = .none
         
     }
     

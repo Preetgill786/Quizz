@@ -15,16 +15,16 @@ class ResultViewController: UIViewController {
     
     @IBAction func retryPress(_ sender: Any) {
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyQuizzViewController") as? MyQuizzViewController {
-                                   
-                                     if let navi = navigationController {
-                                         navi.pushViewController(vc, animated: true)
-                                     }
-                                 }
+            
+            if let navi = navigationController {
+                navi.pushViewController(vc, animated: true)
+            }
+        }
         
     }
     @IBOutlet weak var performText: UILabel!
     
- 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,22 +32,22 @@ class ResultViewController: UIViewController {
         resText.text = String(result) + "/5"
         
         if(result < 3){
-      
-        performText.text = "Please try again!"
+            
+            performText.text = "Please try again!"
         }else{
-           
+            
         }
         if(result == 3){
-          
-             performText.text = "Good job!"
+            
+            performText.text = "Good job!"
         }
         if(result == 4){
-                   performText.text = "Excellent work!"
-              }
+            performText.text = "Excellent work!"
+        }
         if(result == 5){
-                   performText.text = "You are a genius!"
-              }
-      
+            performText.text = "You are a genius!"
+        }
+        
     }
     
     
