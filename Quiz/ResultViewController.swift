@@ -33,19 +33,19 @@ class ResultViewController: UIViewController {
         
         if(result < 3){
             
-            performText.text = "Please try again!"
+            performText.text = "Please try again!😟"
         }else{
             
         }
         if(result == 3){
             
-            performText.text = "Good job!"
+            performText.text = "Good job!👍👍"
         }
         if(result == 4){
-            performText.text = "Excellent work!"
+            performText.text = "😎Excellent work!😎"
         }
         if(result == 5){
-            performText.text = "You are a genius!"
+            performText.text = "🤩You are a genius!🤩"
         }
         
     }

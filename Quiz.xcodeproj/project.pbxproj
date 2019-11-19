@@ -15,6 +15,7 @@
 		9B56CFEA237B16C500AF8781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56CFE8237B16C500AF8781 /* LaunchScreen.storyboard */; };
 		9B56CFF4237B2D1200AF8781 /* QuizItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56CFF3237B2D1200AF8781 /* QuizItem.swift */; };
 		9BB176BD237DBD7D004F7359 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB176BC237DBD7D004F7359 /* ResultViewController.swift */; };
+		9BEEA0782384281A004BC791 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEA0772384281A004BC791 /* QuizQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9B56CFEB237B16C500AF8781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B56CFF3237B2D1200AF8781 /* QuizItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItem.swift; sourceTree = "<group>"; };
 		9BB176BC237DBD7D004F7359 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		9BEEA0772384281A004BC791 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				9B56CFE8237B16C500AF8781 /* LaunchScreen.storyboard */,
 				9B56CFEB237B16C500AF8781 /* Info.plist */,
 				9B56CFF3237B2D1200AF8781 /* QuizItem.swift */,
+				9BEEA0772384281A004BC791 /* QuizQuestion.swift */,
 				9B56CFE1237B16C400AF8781 /* MyQuizzViewController.swift */,
 				9BB176BC237DBD7D004F7359 /* ResultViewController.swift */,
 			);
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BEEA0782384281A004BC791 /* QuizQuestion.swift in Sources */,
 				9B56CFF4237B2D1200AF8781 /* QuizItem.swift in Sources */,
 				9B56CFE2237B16C400AF8781 /* MyQuizzViewController.swift in Sources */,
 				9B56CFDE237B16C400AF8781 /* AppDelegate.swift in Sources */,

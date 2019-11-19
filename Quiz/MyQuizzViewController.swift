@@ -100,13 +100,74 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     
     
-    
-    
     required init?(coder aDecoder : NSCoder){
         
-        
-        
-        
+        //this commented section is to reload the plist file when open in new system
+//        let qItem1 = QuizItem()
+//                       qItem1.quiz = QuizQuestion.quiz1
+//                       qItem1.quizANS = QuizQuestion.ans1Num
+//                       var arr1 = [String]()
+//                         arr1 = QuizQuestion.optionsQ1
+//                       qItem1.quizOptArr = arr1
+//                       quizList.append(qItem1)
+//
+//                       let qItem2 = QuizItem()
+//                       qItem2.quiz = QuizQuestion.quiz2
+//                       qItem2.quizANS = QuizQuestion.ans2Num
+//                       qItem2.quizOptArr = QuizQuestion.optionsQ2
+//                       quizList.append(qItem2)
+//
+//                       let qItem3 = QuizItem()
+//                       qItem3.quiz = QuizQuestion.quiz3
+//                       qItem3.quizANS = QuizQuestion.ans3Num
+//                       qItem3.quizOptArr = QuizQuestion.optionsQ3
+//                       quizList.append(qItem3)
+//
+//
+//                       let qItem4 = QuizItem()
+//                       qItem4.quiz = QuizQuestion.quiz4
+//                       qItem4.quizANS = QuizQuestion.ans4Num
+//                       qItem4.quizOptArr = QuizQuestion.optionsQ4
+//                       quizList.append(qItem4)
+//
+//
+//                       let qItem5 = QuizItem()
+//                       qItem5.quiz = QuizQuestion.quiz5
+//                       qItem5.quizANS = QuizQuestion.ans5Num
+//                       qItem5.quizOptArr = QuizQuestion.optionsQ5
+//                       quizList.append(qItem5)
+//
+//                       let qItem6 = QuizItem()
+//                       qItem6.quiz = QuizQuestion.quiz6
+//                       qItem6.quizANS = QuizQuestion.ans6Num
+//                       qItem6.quizOptArr = QuizQuestion.optionsQ6
+//                       quizList.append(qItem6)
+//
+//                       let qItem7 = QuizItem()
+//                       qItem7.quiz = QuizQuestion.quiz7
+//                       qItem7.quizANS = QuizQuestion.ans7Num
+//                       qItem7.quizOptArr = QuizQuestion.optionsQ7
+//                       quizList.append(qItem7)
+//
+//                       let qItem8 = QuizItem()
+//                       qItem8.quiz = QuizQuestion.quiz8
+//                       qItem8.quizANS = QuizQuestion.ans8Num
+//                       qItem8.quizOptArr = QuizQuestion.optionsQ8
+//                       quizList.append(qItem8)
+//
+//                       let qItem9 = QuizItem()
+//                       qItem9.quiz = QuizQuestion.quiz9
+//                       qItem9.quizANS = QuizQuestion.ans9Num
+//                       qItem9.quizOptArr = QuizQuestion.optionsQ9
+//                       quizList.append(qItem9)
+//
+//                       let qItem10 = QuizItem()
+//                       qItem10.quiz = QuizQuestion.quiz10
+//                       qItem10.quizANS = QuizQuestion.ans10Num
+//                       qItem10.quizOptArr = QuizQuestion.optionsQ10
+//                       quizList.append(qItem10)
+//
+//
         
         
         super.init(coder : aDecoder)
@@ -118,24 +179,24 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
         loadChecklistItems()
         
         var idxArr = [Int]()
-        
+
         for _ in 0 ..< 6 {
-            
+
             repeat{
                 let randomIndex = Int.random(in: 0 ..< quizList.count)
-                
+
                 if !idxArr.contains(randomIndex)
                 {
                     idxArr.append(randomIndex)
                     selectedQuizList.append(quizList[randomIndex])
                     break
                 }
-                
+
             }while(true)
-            
+
         }
         
-        
+        saveChecklistItems()
     }
     
     func loadChecklistItems() {
@@ -212,7 +273,7 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedQuizList[quizNum].quizOptArrCLICK[indexPath.row] = false
-      tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
         
     }
     
@@ -220,8 +281,8 @@ class MyQuizzViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: false)
-        tableQuizOptions.delegate = self
-        tableQuizOptions.dataSource = self
+//        tableQuizOptions.delegate = self
+//        tableQuizOptions.dataSource = self
     }
     
     
